@@ -87,7 +87,7 @@ public class VidaEnemigo : MonoBehaviour
 
     }
 
-    public void HideEnemy() 
+    public virtual void HideEnemy() 
     {
         StopAllCoroutines();
         rigidBody.velocity = Vector3.zero;

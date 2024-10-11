@@ -15,7 +15,7 @@ public class MovimientoEnemigo : VidaEnemigo
 
     Vector2 direccion;
 
-    public  override void Start()
+    public override void Start()
     {
         base.Start();
          animator = GetComponent<Animator>();

@@ -543,6 +543,7 @@ GameObject:
   - component: {fileID: 1251829205}
   - component: {fileID: 1251829204}
   - component: {fileID: 1251829206}
+  - component: {fileID: 1251829207}
   m_Layer: 0
   m_Name: Hongo
   m_TagString: Untagged
@@ -611,7 +612,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -479533720, guid: 85d0d21fac4ac9b40a6ea707823e4c5f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -651,7 +652,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 100
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -700,7 +701,7 @@ CapsuleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 1.1556001}
-  m_Direction: 0
+  m_Direction: 1
 --- !u!114 &1251829206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -716,11 +717,26 @@ MonoBehaviour:
   maxHp: 5
   hp: 5
   knockbackStrength: 0.2
-  speed: 5
-  minPatrolTime: 1
+  speed: 3
+  minPatrolTime: 3
   maxPatrolTime: 3
-  mixWaitTime: 2
-  maxMixWaitTime: 2
+  mixWaitTime: 3
+  maxMixWaitTime: 3
+--- !u!114 &1251829207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251829199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfdf46b5ba01f994aafcfb340ca1c7bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHp: 5
+  hp: 5
+  knockbackStrength: 0.2
 --- !u!1 &1462434961
 GameObject:
   m_ObjectHideFlags: 0
@@ -868,8 +884,8 @@ Transform:
   m_GameObject: {fileID: 1734880463}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0399, y: -0.0257, z: 0}
-  m_LocalScale: {x: 1.1367353, y: 1.0959616, z: 1}
+  m_LocalPosition: {x: 0.0836, y: 0.018, z: 0}
+  m_LocalScale: {x: 1.2061967, y: 1.0916363, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1913329113}
@@ -2342,8 +2358,8 @@ Transform:
   m_GameObject: {fileID: 2096254916}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0818, y: 0.0236, z: 0}
-  m_LocalScale: {x: 1.1314892, y: 1.0848886, z: 1}
+  m_LocalPosition: {x: 0.0381, y: 0.0236, z: 0}
+  m_LocalScale: {x: 1.2049462, y: 1.0848886, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1913329113}

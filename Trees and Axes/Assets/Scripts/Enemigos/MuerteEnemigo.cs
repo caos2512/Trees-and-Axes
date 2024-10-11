@@ -8,7 +8,7 @@ public class MuerteEnemigo : MonoBehaviour
     VidaEnemigo VidaEnemigo;
     Animator animator;
 
-    private void Start()
+    protected void Start()
     {
         VidaEnemigo = GetComponent<VidaEnemigo>();
         animator = GetComponent<Animator>();
@@ -19,12 +19,12 @@ public class MuerteEnemigo : MonoBehaviour
         animator.Play("MuerteHongo");
     }
 
-    private void Hide() 
+    public virtual void Hide() 
     {
         VidaEnemigo.HideEnemy();
     }
 
-    private void Destroy()
+    public virtual void Destroy()
     {
        Destroy(VidaEnemigo.gameObject);
     }
