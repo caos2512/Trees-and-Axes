@@ -7,20 +7,20 @@ public class Movimiento : MonoBehaviour
     public float velocid = 5f;
     Vector2 direccion;
 
-    Rigidbody2D rigidbody;
+    Rigidbody2D rigidBody;
     Animator Animator;
 
     bool Ataque;
 
    private void Start()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
+        rigidBody = GetComponent<Rigidbody2D>();
         Animator = GetComponent<Animator>();
     }
 
     private void FixedUpdate()
     {
-        rigidbody.velocity = direccion * velocid;
+        rigidBody.velocity = direccion * velocid;
     }
 
     // Update is called once per frame

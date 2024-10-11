@@ -64,7 +64,7 @@ public class VidaEnemigo : MonoBehaviour
         while (auxTime > 0) 
         {
             yield return new WaitForSeconds(blinkTime);
-            tiempoInvencible -= blinkTime;
+            auxTime -= blinkTime;
             spriteRenderer.enabled = !spriteRenderer.enabled;
         }
         spriteRenderer.enabled = true;
@@ -81,7 +81,7 @@ public class VidaEnemigo : MonoBehaviour
 
         rigidBody.velocity = (transform.position - hitPosition).normalized * knockbackStrength;
         yield return new WaitForSeconds(knockbackTime);
-        rigidBody.velocity = Vector3.zero;
+        rigidBody.velocity = Vector2.zero;
         yield return new WaitForSeconds(knockbackTime);
         if (hp > 0) ContinueBehaviour();
 
