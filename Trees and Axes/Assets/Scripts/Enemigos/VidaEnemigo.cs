@@ -28,7 +28,7 @@ public class VidaEnemigo : MonoBehaviour
         if (collision.CompareTag("Espada") && !invencible)
         {
             hp--;
-            if (hp < 0)
+            if (hp <= 0)
             {
                 muerteEnemigo.Defeat();
             }
