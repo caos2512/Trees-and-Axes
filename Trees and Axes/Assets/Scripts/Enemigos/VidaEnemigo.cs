@@ -5,25 +5,27 @@ using UnityEngine;
 
 public class VidaEnemigo : MonoBehaviour
 {
+    [Header("VidaEnemigo parametres")]
     public int maxHp = 5;
     public int hp = 5;
 
-    bool invencible;
-    float tiempoInvencible = 0.2f;
-    float blinkTime = 0.1f;
 
-    public float knockbackStrength = 2f;
+    protected bool invencible;
+    protected float tiempoInvencible = 0.2f;
+    protected float blinkTime = 0.1f;
+
+    public float knockbackStrength = 0.2f;
     float knockbackTime = 0.3f;
 
 
-    Rigidbody2D rigidBody;
-    SpriteRenderer spriteRenderer;
-    MuerteEnemigo muerteEnemigo;
+    protected Rigidbody2D rigidBody;
+    protected SpriteRenderer spriteRenderer;
+    protected MuerteEnemigo muerteEnemigo;
 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Espada" && !invencible)
+        if (collision.CompareTag("Espada") && !invencible)
         {
             hp--;
             if (hp < 0)
@@ -31,13 +33,14 @@ public class VidaEnemigo : MonoBehaviour
                 muerteEnemigo.Defeat();
             }
 
+            StopBehaviour();
             StartCoroutine(Invencibility());
             StartCoroutine(Knockback(collision.transform.position));
         }
     }
 
     // Start is called before the first frame update
-    void Start()
+    public virtual void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -70,10 +73,17 @@ public class VidaEnemigo : MonoBehaviour
 
     IEnumerator Knockback(Vector3 hitPosition) 
     {
-        if (knockbackStrength <= 0) yield break;
+        if (knockbackStrength <= 0) 
+        {
+            if (hp > 0) ContinueBehaviour();
+            yield break;
+        } 
+
         rigidBody.velocity = (transform.position - hitPosition).normalized * knockbackStrength;
         yield return new WaitForSeconds(knockbackTime);
         rigidBody.velocity = Vector3.zero;
+        yield return new WaitForSeconds(knockbackTime);
+        if (hp > 0) ContinueBehaviour();
 
     }
 
@@ -84,4 +94,7 @@ public class VidaEnemigo : MonoBehaviour
         spriteRenderer.enabled = false;
     }
 
+    public virtual void StopBehaviour() { }
+
+    public virtual void ContinueBehaviour() { }
 }

@@ -540,9 +540,9 @@ GameObject:
   - component: {fileID: 1251829203}
   - component: {fileID: 1251829202}
   - component: {fileID: 1251829201}
-  - component: {fileID: 1251829206}
   - component: {fileID: 1251829205}
   - component: {fileID: 1251829204}
+  - component: {fileID: 1251829206}
   m_Layer: 0
   m_Name: Hongo
   m_TagString: Untagged
@@ -632,8 +632,8 @@ Transform:
   m_GameObject: {fileID: 1251829199}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.82, y: 0.06, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 4.29, y: -1.22, z: 0}
+  m_LocalScale: {x: 1.1556, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1462434962}
@@ -699,7 +699,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 1.1556001}
   m_Direction: 0
 --- !u!114 &1251829206
 MonoBehaviour:
@@ -710,12 +710,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1251829199}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfdf46b5ba01f994aafcfb340ca1c7bc, type: 3}
+  m_Script: {fileID: 11500000, guid: 25fbbde1101153340b85866749505a02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHp: 5
   hp: 5
   knockbackStrength: 2
+  speed: 3
+  minPatrolTime: 1.5
+  maxPatrolTime: 3
+  mixWaitTime: 2
+  maxMixWaitTime: 2
 --- !u!1 &1462434961
 GameObject:
   m_ObjectHideFlags: 0
@@ -744,7 +749,7 @@ Transform:
   m_GameObject: {fileID: 1462434961}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.01, y: -0.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -811,7 +816,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 10
   m_Sprite: {fileID: -1232457880, guid: 85d0d21fac4ac9b40a6ea707823e4c5f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
