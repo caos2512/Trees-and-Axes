@@ -50,12 +50,6 @@ public class VidaEnemigo : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     IEnumerator Invencibility()
     {
         invencible = true;
@@ -81,13 +75,13 @@ public class VidaEnemigo : MonoBehaviour
 
         rigidBody.velocity = (transform.position - hitPosition).normalized * knockbackStrength;
         yield return new WaitForSeconds(knockbackTime);
-        rigidBody.velocity = Vector2.zero;
+        rigidBody.velocity = Vector3.zero;
         yield return new WaitForSeconds(knockbackTime);
         if (hp > 0) ContinueBehaviour();
 
     }
 
-    public virtual void HideEnemy() 
+    public void HideEnemy() 
     {
         StopAllCoroutines();
         rigidBody.velocity = Vector3.zero;

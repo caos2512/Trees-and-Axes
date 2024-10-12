@@ -19,12 +19,12 @@ public class MuerteEnemigo : MonoBehaviour
         animator.Play("MuerteHongo");
     }
 
-    public virtual void Hide() 
+    public void Hide() 
     {
         VidaEnemigo.HideEnemy();
     }
 
-    public virtual void Destroy()
+    public void Destroy()
     {
        Destroy(VidaEnemigo.gameObject);
     }
